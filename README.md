@@ -13,6 +13,6 @@
 1. I am eager to expand my knowledge by learning **additional programming languages**.
 2. I enjoy exploring and analyzing data, finding _satisfaction_ in uncovering insights through it.
 
-A meme that captures how I currently feel about my university studies is 
+_**Me finishing our first assignment:**_
 
-![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
+![](https://tenor.com/en-NZ/view/crying-gif-24735885.gif)
