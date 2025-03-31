@@ -1,0 +1,92 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap');
+
+Body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(to bottom, #add8e6, #00008b);
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+```
+
+## Analyzing Student Laptop Usage and Activities
+
+This analysis explores device usage, activities, and screen counts among University of Auckland students to identify common study habits and device preferences. It provides insights into the types of devices students prefer and how they spend their time on campus. Additionally, this analysis helps determine whether the new monitors installed around the university are being effectively utilised.
+
+```{r}
+# Load tidyverse package
+library(tidyverse)
+
+# Inputting the CSV file into rstudio
+logged_data <- read_csv("/cloud/project/STATS 220 - Project 2 (Responses) - Form responses 1.csv")
+
+# Renaming variables
+latest_data <- logged_data %>%
+  rename(
+    Timestamp = 'Timestamp',
+    Device_type = 'What type of laptop was the student using?',
+    Activity = 'What were they doing',
+    Screen_count = 'How many screens were they using?'
+  )
+
+# _DATA EXPLORATION_
+
+# Counts how many total amount of screens 
+total_screens <- sum(latest_data$Screen_count)
+
+# Counts how many data was recorded
+data_count <- nrow(latest_data)
+
+# Average number of screens students used
+average_screens <- mean(latest_data$Screen_count)
+
+# Printing summary values
+paste0("Data count:", data_count)
+paste0("Total screens used by students:", total_screens)
+paste0("Average screens used by students:", average_screens)
+
+# _BAR CHARTS_
+
+# Bar Chart 1 - Counting student device types
+device_bar <- ggplot(latest_data, aes(x = Device_type, fill = Device_type)) +
+  geom_bar(stat = "count") +
+  labs(
+    title = "Student Laptop Types",
+    x = "Device",
+    y = "Students"
+  )
+
+print(device_bar)
+
+# Bar Chart 2 - Student activities
+activity_bar <- ggplot(latest_data, aes(x = Activity, fill = Activity)) +
+  geom_bar(stat = "count") +
+  labs(
+    title = "Student Activity",
+    x = "Student Activity",
+    y = "Students"
+  )
+
+print(activity_bar)
+
+
+```
+
+The best pet to have is a 'r best_pet' of cource!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
+
