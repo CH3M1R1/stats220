@@ -9,10 +9,9 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
 ```
 
 ```{css}
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;800&display=swap');
 
 Body {
-    font-family: 'Nunito', sans-serif;
+    font-family: arial, sans-serif;
     background: linear-gradient(to bottom, #add8e6, #00008b);
     text-align: center;
     color: #FFFFFF;
