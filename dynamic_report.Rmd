@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
 Body {
     font-family: arial, sans-serif;
     background: linear-gradient(to bottom, #add8e6, #00008b);
-    text-align: center;
+    text-align: left;
     color: #FFFFFF;
     margin-bottom: 50px;
     margin-left: 30px;
@@ -31,7 +31,7 @@ This analysis explores device usage, activities, and screen counts among Univers
 library(tidyverse)
 
 # Inputting the CSV file into rstudio
-logged_data <- read_csv("/cloud/project/STATS 220 - Project 2 (Responses) - Form responses 1.csv")
+logged_data <- read_csv("C:/Users/chemi/OneDrive/Desktop/Stats 220/STATS 220 - Project 2/STATS 220 - Project 2 (Responses) - Form responses 1.csv")
 
 # Renaming variables
 latest_data <- logged_data %>%
@@ -53,39 +53,25 @@ data_count <- nrow(latest_data)
 # Average number of screens students used
 average_screens <- mean(latest_data$Screen_count)
 
-# Printing summary values
-paste0("Data count:", data_count)
-paste0("Total screens used by students:", total_screens)
-paste0("Average screens used by students:", average_screens)
-
 # _BAR CHARTS_
 
 # Bar Chart 1 - Counting student device types
-device_bar <- ggplot(latest_data, aes(x = Device_type, fill = Device_type)) +
-  geom_bar(stat = "count") +
+ggplot(latest_data, aes(x = Device_type)) +
+  geom_bar(stat = "count", fill = "blue") +
   labs(
-    title = "Student Laptop Types",
-    x = "Device",
-    y = "Students"
+    title = "Student Laptop Types"
   )
-
-print(device_bar)
 
 # Bar Chart 2 - Student activities
-activity_bar <- ggplot(latest_data, aes(x = Activity, fill = Activity)) +
-  geom_bar(stat = "count") +
+ggplot(latest_data, aes(x = Activity)) +
+  geom_bar(stat = "count", fill = "red") +
   labs(
-    title = "Student Activity",
-    x = "Student Activity",
-    y = "Students"
+    title = "Student Activity"
   )
-
-print(activity_bar)
-
 
 ```
 
-The best pet to have is a 'r best_pet' of cource!
+The best pet to have is a 'r best_pet' of course!
 
 ![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
 
