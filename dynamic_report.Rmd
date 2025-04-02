@@ -51,7 +51,7 @@ This analysis explores device usage, activities, and screen counts among Univers
 library(tidyverse)
 
 # Inputting the CSV file into rstudio
-logged_data <- read_csv("C:/Users/chemi/OneDrive/Desktop/Stats 220/STATS 220 - Project 2/STATS 220 - Project 2 (Responses) - Form responses 1.csv")
+logged_data <- read_csv("https://raw.githubusercontent.com/CH3M1R1/stats220/refs/heads/main/STATS%20220%20-%20Project%202%20(Responses)%20-%20Form%20responses%201.csv")
 
 # Renaming variables
 latest_data <- logged_data %>%
