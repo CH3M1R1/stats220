@@ -89,6 +89,8 @@ barchart_2 <- ggplot(latest_data, aes(x = Activity, fill = Activity)) +
     title = "Student Activity"
   )
 
+# These summary values and visualizations provide insights into student device usage and help assess the effectiveness of the new monitors installed at the University of Auckland.
+
 ```
 
 # Bar Graphs
