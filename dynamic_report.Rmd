@@ -44,7 +44,7 @@ p {
 
 # Analyzing Student Laptop Usage and Activities
 
-This analysis explores device usage, activities, and screen counts among University of Auckland students to identify common study habits and device preferences. It provides insights into the types of devices students prefer and how they spend their time on campus. Additionally, this analysis helps determine whether the new monitors installed around the university are being effectively utilised.
+This analysis explores device usage, activities, and screen counts among University of Auckland students. The primary focus of the data collection was to understand the types of devices students use for academic and campus-related activities, such as whether they use MacBooks or Windows laptops. Additionally, the data aims to explore the various activities students engage in, including studying, browsing, or attending online lectures, and to evaluate the effectiveness of the newly installed monitors at key locations like the Kate Edger Information Commons. By understanding these patterns, we can assess whether the new monitors are being fully utilized for academic purposes and identify any device preferences that could enhance future resource planning at the university.
 
 ```{r}
 # Load tidyverse package
@@ -101,22 +101,24 @@ barchart_2 <- ggplot(latest_data, aes(x = Activity, fill = Activity)) +
 print(barchart_1)
 ```
 
-This bar chart shows the distribution of different laptop types used by students at the University of Auckland. It highlights the most common device choices, giving insight into student preferences for academic work and campus activities.
+This bar chart visualizes the distribution of different laptop types used by students at the University of Auckland. It highlights the most popular device choices, offering insights into the technological preferences of the student body. Understanding which devices are most commonly used can help the newer university students make informed decisions about which products would students prefer to use when studying.
+
+In which seen in this graph, students prefer to buy apple products such as macbooks, this could be due to their light weight design and smooth fucntionality.
 
 ## Student Activity Breakdown
 ```{r}
 print(barchart_2)
 ```
 
-This chart displays the various activities students engage in while using their laptops. It categorizes the most common tasks performed, such as studying, browsing, or watching online lectures, to help identify key student behaviors and priorities.
+This chart displays the various activities students engage in while using their laptops. By categorizing the tasks into studying, browsing, watching online lectures, and other activities, this chart helps identify the most common behaviors on campus. This breakdown could be valuable for designing spaces that better support student needs, such as creating areas for collaborative work or quiet study spaces.
 
 # Data Summary
 
 ## Total Screens Used by Students
-The total number of screens recorded among University of Auckland students is `r total_screens`
+The total number of screens recorded among University of Auckland students is `r total_screens`. This reflects the total number of screens in use across all student activities during the data collection period. Understanding this number is essential for evaluating the demand for additional screens and monitors in the campus environment, especially in high-traffic study areas.
 
 ## Total Data Entries Recorded
 The total number of data entries collected for this analysis is `r data_count`
 
 ## Average Number of Screens Used
-On average, University of Auckland students were using `r average_screens` screens during their activities
+On average, University of Auckland students were using `r average_screens` screens during their activities. This metric is useful for assessing whether students are utilizing multiple screens for multitasking purposes or relying on single devices for their study needs. This number also provides insight into the adoption of multi-screen setups.
