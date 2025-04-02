@@ -1,0 +1,85 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: lightblue;
+    color: #FFFFFF;
+    margin: 50px 30px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+```
+
+## Analyzing Student Laptop Usage and Activities
+
+This analysis explores device usage, activities, and screen counts among University of Auckland students to identify common study habits and device preferences. It provides insights into the types of devices students prefer and how they spend their time on campus. Additionally, this analysis helps determine whether the new monitors installed around the university are being effectively utilised.
+
+```{r}
+# Load tidyverse package
+library(tidyverse)
+
+# Inputting the CSV file into rstudio
+logged_data <- read_csv("C:/Users/chemi/OneDrive/Desktop/Stats 220/STATS 220 - Project 2/STATS 220 - Project 2 (Responses) - Form responses 1.csv")
+
+# Renaming variables
+latest_data <- logged_data %>%
+  rename(
+    Timestamp = 'Timestamp',
+    Device_type = 'What type of laptop was the student using?',
+    Activity = 'What were they doing',
+    Screen_count = 'How many screens were they using?'
+  )
+
+# _DATA EXPLORATION_
+
+# Counts how many total amount of screens 
+total_screens <- sum(latest_data$Screen_count)
+
+# Counts how many data was recorded
+data_count <- nrow(latest_data)
+
+# Average number of screens students used
+average_screens <- mean(latest_data$Screen_count)
+
+# _BAR CHARTS_
+
+# Bar Chart 1 - Counting student device types
+ggplot(latest_data, aes(x = Device_type)) +
+  geom_bar(stat = "count", fill = "blue") +
+  labs(
+    title = "Student Laptop Types"
+  )
+
+# Bar Chart 2 - Student activities
+ggplot(latest_data, aes(x = Activity)) +
+  geom_bar(stat = "count", fill = "red") +
+  labs(
+    title = "Student Activity"
+  )
+
+```
+
+The best pet to have is a 'r best_pet' of course!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
+
